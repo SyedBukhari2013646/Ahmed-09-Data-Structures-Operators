@@ -488,3 +488,34 @@ const books = [
 // The spread operator (...)
 
 // 3.1
+
+// // 2.6
+// function printBookInfo({ title, author, year }) {
+//   console.log(`${title} by ${author}, ${year}`);
+// }
+
+// printBookInfo({
+//   title: 'Algorithms',
+//   author: 'Robert Sedgewick',
+//   year: '2011',
+// });
+
+// The spread operator (...)
+
+// 3.1
+
+// // 2.6
+// function printBookInfo({ title, author, year }) {
+//   console.log(`${title} by ${author}, ${year}`);
+// }
+
+// printBookInfo({
+//   title: 'Algorithms',
+//   author: 'Robert Sedgewick',
+//   year: '2011',
+// });
+
+// The spread operator (...)
+
+// 3.1
+
