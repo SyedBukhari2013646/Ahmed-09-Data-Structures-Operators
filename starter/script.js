@@ -63,6 +63,11 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     `Here is your delecious pasta with ${ing1}, ${ing2} and ${ing3}`;
   },
+
+  orderPizza: function (mainIngriedient, ...otherIngriedient) {
+    console.log(mainIngriedient);
+    console.log(otherIngriedient);
+  },
 };
 
 // restaurant.orderDelivery({
@@ -143,55 +148,96 @@ const restaurant = {
 
 // The spread operator (...)
 
-const arr = [7, 8, 9];
+// const arr = [7, 8, 9];
 
-const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
-console.log(badNewArr);
+// const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+// console.log(badNewArr);
 
-const newArr = [1, 2, ...arr];
-console.log(newArr);
+// const newArr = [1, 2, ...arr];
+// console.log(newArr);
 
-console.log(...newArr);
-console.log(1, 2, 3, 5, 2, 3);
+// console.log(...newArr);
+// console.log(1, 2, 3, 5, 2, 3);
 
-const newMenu = [...restaurant.mainMenu, 'Ginnoci'];
-console.log(newMenu);
+// const newMenu = [...restaurant.mainMenu, 'Ginnoci'];
+// console.log(newMenu);
 
-// Copy array
-const copyNewMenu = [...restaurant.mainMenu];
-console.log(copyNewMenu);
+// // Copy array
+// const copyNewMenu = [...restaurant.mainMenu];
+// console.log(copyNewMenu);
 
-// Join 2 array
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-console.log(menu);
+// // Join 2 array
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(menu);
 
-// Iterables are strings, maps, arrays, sets but NOT objects.
-const str = 'Syed Muhammad Ahmed Bukhari';
-const letters = [...str, ' ', 'Harris'];
-console.log(letters);
-console.log(str);
+// // Iterables are strings, maps, arrays, sets but NOT objects.
+// const str = 'Syed Muhammad Ahmed Bukhari';
+// const letters = [...str, ' ', 'Harris'];
+// console.log(letters);
+// console.log(str);
 
-// Real world Example
-const ingriedients = [
-  // prompt("Let's make pasta! Ingriedients 1?"),
-  // prompt('Ingriedients 2?'),
-  // prompt('Ingriedients 3'),
-];
-console.log(ingriedients);
-restaurant.orderPasta(...ingriedients);
+// // Real world Example
+// const ingriedients = [
+//   // prompt("Let's make pasta! Ingriedients 1?"),
+//   // prompt('Ingriedients 2?'),
+//   // prompt('Ingriedients 3'),
+// ];
+// console.log(ingriedients);
+// restaurant.orderPasta(...ingriedients);
 
-//Objects
-const newRestaurant = {
-  FoundedIn: 1991,
-  ...restaurant,
-  FoundedBy: 'Imran Khan',
-};
-console.log(newRestaurant);
+// //Objects
+// const newRestaurant = {
+//   FoundedIn: 1991,
+//   ...restaurant,
+//   FoundedBy: 'Imran Khan',
+// };
+// console.log(newRestaurant);
 
-const restaurantCopy = { ...restaurant };
-restaurantCopy.name = 'Syed Bukhari';
-console.log(restaurantCopy.name);
-console.log(restaurant.name);
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.name = 'Syed Bukhari';
+// console.log(restaurantCopy.name);
+// console.log(restaurant.name);
+
+// The spread operator (...)
+
+// (...) The Rest Operator
+
+// 1) Destructing Assignment
+
+// const { a, b, ...others } = [1, 2, 3, 4, 5];
+// console.log(a, b, others);
+
+// // From The Restaurant arrays
+// const [Pizza, , Risotto, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(Pizza, Risotto, otherFood);
+
+// // objects
+// const { sat, ...weekDays } = restaurant.openingHours;
+// console.log(weekDays);
+
+// // 2) Function
+
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+//   console.log(sum);
+// };
+
+// add(2, 4, 4);
+// add(2, 5, 3.5, 435, 3);
+
+// const x = [23, 4, 6];
+// add(...x);
+
+// restaurant.orderPizza('Mushroom', 'Pasta', 'Onion', 'Spinach');
+
+// The Short Circuting(&& , ||)
+
+console.log(3 || 'Ahmed');
+
 // Practicing Assignmets Questions
 
 const books = [
@@ -487,35 +533,34 @@ const books = [
 
 // The spread operator (...)
 
-// 3.1
+// // 3.1
+// const bookAuthors = [...books[0].author, ...books[1].author];
+// console.log(bookAuthors);
 
-// // 2.6
-// function printBookInfo({ title, author, year }) {
-//   console.log(`${title} by ${author}, ${year}`);
+// // 3.2
+// function spellWord(word) {
+//   console.log(...word);
 // }
 
-// printBookInfo({
-//   title: 'Algorithms',
-//   author: 'Robert Sedgewick',
-//   year: '2011',
-// });
+// spellWord('Harris');
 
-// The spread operator (...)
+//(...) The Rest operator
 
-// 3.1
+// // 4.1
+// const [mainKeyword, ...rest] = books[0].keywords;
+// console.log(mainKeyword);
+// console.log(rest);
 
-// // 2.6
-// function printBookInfo({ title, author, year }) {
-//   console.log(`${title} by ${author}, ${year}`);
+// // 4.2
+
+// const { publisher: bookPublisher, ...restOfTheBook } = books[1];
+// console.log(bookPublisher);
+// console.log(restOfTheBook);
+
+// // 4.3
+
+// function printBookAuthorsCount(title, ...authors) {
+//   console.log(`The book ${title} has ${authors.length} authors.`);
 // }
 
-// printBookInfo({
-//   title: 'Algorithms',
-//   author: 'Robert Sedgewick',
-//   year: '2011',
-// });
-
-// The spread operator (...)
-
-// 3.1
-
+// printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne');
