@@ -236,7 +236,38 @@ const restaurant = {
 
 // The Short Circuting(&& , ||)
 
-console.log(3 || 'Ahmed');
+// || OR Operator
+
+// console.log(3 || 'Ahmed');
+// console.log('' || 'Ahmed');
+// console.log(null || undefined);
+// console.log(true || 0);
+
+// console.log(undefined || null || 0 || 'Zainab' || 'Ahmed');
+
+// // We can use the short circuting to prevent the terniary operator and more worst the if else statment
+
+// restaurant.numGuests = 23;
+// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests1);
+
+// // instead of above we can simply use the short circuting
+// const guests2 = restaurant.guests1 || 23;
+// console.log(guests2);
+
+// // && AND Operator
+
+// console.log(undefined && 'Ahmed');
+// console.log('ahmed' && 'Bukhari');
+
+// // Practical example
+// if (restaurant.orderPizza) {
+//   restaurant.orderPizza('Mushroom', 'Beef Tikka');
+// }
+
+// restaurant.orderPizza && restaurant.orderPizza('Mushroom', 'Catchup');
+
+// The nulish coaelsing operator (&&)
 
 // Practicing Assignmets Questions
 
@@ -564,3 +595,27 @@ const books = [
 // }
 
 // printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne');
+
+//( || and && ) Short circuting operators
+
+// 5.1
+
+function hasExamplesInJava(books) {
+  return books.programmingLanguage === 'java' || 'no data available';
+}
+
+console.log(hasExamplesInJava(books[0]));
+
+// function hasExamplesInJava(books) {
+//   return books.programmingLanguage === 'Java' || 'no data available';
+// }
+
+// console.log(hasExamplesInJava(books[0]));
+// console.log(hasExamplesInJava(books[1]));
+
+// 5.2
+
+for (let i = 0; i < books.length; i++) {
+  books[i].onlineContent &&
+    console.log(`${books[i].title} provides online contents`);
+}
