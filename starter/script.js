@@ -269,6 +269,38 @@ const restaurant = {
 
 // The nulish coaelsing operator (&&)
 
+// IT WILL WORK FOR THE NULL OR UNDEFINED VALUES.
+
+// New Assignment operator
+const rest1 = {
+  name: 'Toora baba',
+  numGuests: 20,
+};
+
+const rest2 = {
+  name: 'Lahori Channay',
+  owner: 'Upon',
+};
+
+// OR assignment operator
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+//Thenew ES2021 data according to the OR operator with same
+rest1.numGuests ||= 10;
+rest2.numGuests ||= 10;
+
+// ?? Nulsih assignment operator
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+// && AND Assignment operator
+// rest1.owner = rest1.owner && '<ANOMOYS';
+// rest2.owner = rest2.owner && '<ANOYNOMOUS';
+
+rest1.owner &&= '<ANOYNOMOUS';
+rest2.owner &&= '<ANOYNOMOUS';
+console.log(rest1);
+console.log(rest2);
 // Practicing Assignmets Questions
 
 const books = [
@@ -600,22 +632,110 @@ const books = [
 
 // 5.1
 
-function hasExamplesInJava(books) {
-  return books.programmingLanguage === 'java' || 'no data available';
-}
-
-console.log(hasExamplesInJava(books[0]));
-
 // function hasExamplesInJava(books) {
-//   return books.programmingLanguage === 'Java' || 'no data available';
+//   return books.programmingLanguage === 'java' || 'no data available';
 // }
 
 // console.log(hasExamplesInJava(books[0]));
-// console.log(hasExamplesInJava(books[1]));
 
-// 5.2
+// // function hasExamplesInJava(books) {
+// //   return books.programmingLanguage === 'Java' || 'no data available';
+// // }
 
-for (let i = 0; i < books.length; i++) {
-  books[i].onlineContent &&
-    console.log(`${books[i].title} provides online contents`);
-}
+// // console.log(hasExamplesInJava(books[0]));
+// // console.log(hasExamplesInJava(books[1]));
+
+// // 5.2
+
+// for (let i = 0; i < books.length; i++) {
+//   books[i].onlineContent &&
+//     console.log(`${books[i].title} provides online contents`);
+//}
+
+//The logical operator
+
+// 7.1
+// for (let i = 0; i < books.length; i++) {
+//   books[i].edition ||= 1;
+// }
+
+// console.log(books.edition);
+// //7.2
+
+// for (let i = 0; i < books.length; i++) {
+//   books[i].highlighted &&= !(books[i].thirdParty.goodreads.rating < 4.2);
+// }
+
+// console.log(books.highlighted);
+
+// // 5.2
+
+// for (let i = 0; i < books.length; i++) {
+//   books[i].onlineContent &&
+//     console.log(`${books[i].title} provides online contents`);
+//}
+
+//The logical operator
+
+// 7.1
+// for (let i = 0; i < books.length; i++) {
+//   books[i].edition ||= 1;
+// }
+
+// console.log(books.edition);
+// //7.2
+
+// for (let i = 0; i < books.length; i++) {
+//   books[i].highlighted &&= !(books[i].thirdParty.goodreads.rating < 4.2);
+// }
+
+// console.log(books.highlighted);
+
+
+// // 5.2
+
+// for (let i = 0; i < books.length; i++) {
+//   books[i].onlineContent &&
+//     console.log(`${books[i].title} provides online contents`);
+//}
+
+//The logical operator
+
+// 7.1
+// for (let i = 0; i < books.length; i++) {
+//   books[i].edition ||= 1;
+// }
+
+// console.log(books.edition);
+// //7.2
+
+// for (let i = 0; i < books.length; i++) {
+//   books[i].highlighted &&= !(books[i].thirdParty.goodreads.rating < 4.2);
+// }
+
+// console.log(books.highlighted);
+
+
+// // 5.2
+
+// for (let i = 0; i < books.length; i++) {
+//   books[i].onlineContent &&
+//     console.log(`${books[i].title} provides online contents`);
+//}
+
+//The logical operator
+
+// 7.1
+// for (let i = 0; i < books.length; i++) {
+//   books[i].edition ||= 1;
+// }
+
+// console.log(books.edition);
+// //7.2
+
+// for (let i = 0; i < books.length; i++) {
+//   books[i].highlighted &&= !(books[i].thirdParty.goodreads.rating < 4.2);
+// }
+
+// console.log(books.highlighted);
+
