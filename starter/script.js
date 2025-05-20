@@ -30,7 +30,8 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  order: function (starterIndex, mainIndex) {
+  //New ES6 Object literals enhancement
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
@@ -49,38 +50,33 @@ const restaurant = {
     },
   },
 
-  orderDelivery: function ({
-    time = '20:00',
-    adress,
-    mainIndex = 0,
-    starterIndex,
-  }) {
+  orderDelivery({ time = '20:00', adress, mainIndex = 0, starterIndex }) {
     console.log(
       `Order Recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delievered to ${adress} at ${time}`
     );
   },
 
-  orderPasta: function (ing1, ing2, ing3) {
+  orderPasta(ing1, ing2, ing3) {
     `Here is your delecious pasta with ${ing1}, ${ing2} and ${ing3}`;
   },
 
-  orderPizza: function (mainIngriedient, ...otherIngriedient) {
+  orderPizza(mainIngriedient, ...otherIngriedient) {
     console.log(mainIngriedient);
     console.log(otherIngriedient);
   },
 };
 
-// restaurant.orderDelivery({
-//   time: '22:30',
-//   adress: 'Mohalla Kucha Saadat Dhoke Fateh Attock Cantt',
-//   mainIndex: 2,
-//   starterIndex: 3,
-// });
+restaurant.orderDelivery({
+  time: '22:30',
+  adress: 'Mohalla Kucha Saadat Dhoke Fateh Attock Cantt',
+  mainIndex: 2,
+  starterIndex: 3,
+});
 
-// restaurant.orderDelivery({
-//   adress: 'Mohalla Kucha Saadat Dhoke Fateh Attock Cantt',
-//   starterIndex: 2,
-// });
+restaurant.orderDelivery({
+  adress: 'Mohalla Kucha Saadat Dhoke Fateh Attock Cantt',
+  starterIndex: 2,
+});
 
 // // Destructuring Objects
 // const { name, openingHours, categories } = restaurant;
@@ -272,35 +268,44 @@ const restaurant = {
 // IT WILL WORK FOR THE NULL OR UNDEFINED VALUES.
 
 // New Assignment operator
-const rest1 = {
-  name: 'Toora baba',
-  numGuests: 20,
-};
+// const rest1 = {
+//   name: 'Toora baba',
+//   numGuests: 20,
+// };
 
-const rest2 = {
-  name: 'Lahori Channay',
-  owner: 'Upon',
-};
+// const rest2 = {
+//   name: 'Lahori Channay',
+//   owner: 'Upon',
+// };
 
-// OR assignment operator
-// rest1.numGuests = rest1.numGuests || 10;
-// rest2.numGuests = rest2.numGuests || 10;
-//Thenew ES2021 data according to the OR operator with same
-rest1.numGuests ||= 10;
-rest2.numGuests ||= 10;
+// // OR assignment operator
+// // rest1.numGuests = rest1.numGuests || 10;
+// // rest2.numGuests = rest2.numGuests || 10;
+// //Thenew ES2021 data according to the OR operator with same
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
 
-// ?? Nulsih assignment operator
-rest1.numGuests ??= 10;
-rest2.numGuests ??= 10;
+// // ?? Nulsih assignment operator
+// rest1.numGuests ??= 10;
+// rest2.numGuests ??= 10;
 
-// && AND Assignment operator
-// rest1.owner = rest1.owner && '<ANOMOYS';
-// rest2.owner = rest2.owner && '<ANOYNOMOUS';
+// // && AND Assignment operator
+// // rest1.owner = rest1.owner && '<ANOMOYS';
+// // rest2.owner = rest2.owner && '<ANOYNOMOUS';
 
-rest1.owner &&= '<ANOYNOMOUS';
-rest2.owner &&= '<ANOYNOMOUS';
-console.log(rest1);
-console.log(rest2);
+// rest1.owner &&= '<ANOYNOMOUS';
+// rest2.owner &&= '<ANOYNOMOUS';
+// console.log(rest1);
+// console.log(rest2);
+
+//Looping arrays The for-of loop
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
 // Practicing Assignmets Questions
 
 const books = [
@@ -799,39 +804,39 @@ TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Th
 GOOD LUCK 😀
 */
 
-//1
-const [player1, player2] = [game.players[0], game.players[1]];
-console.log(player1);
-console.log(player2);
+// //1
+// const [player1, player2] = [game.players[0], game.players[1]];
+// console.log(player1);
+// console.log(player2);
 
-//2
-const [gk1, ...fieldPlayers1] = player1;
-const [gk2, ...fieldPlayers2] = player2;
+// //2
+// const [gk1, ...fieldPlayers1] = player1;
+// const [gk2, ...fieldPlayers2] = player2;
 
-console.log(gk1, fieldPlayers1);
-console.log(gk2, fieldPlayers2);
+// console.log(gk1, fieldPlayers1);
+// console.log(gk2, fieldPlayers2);
 
-//3
-const allPlayers = [...player1, ...player2];
-console.log(allPlayers);
+// //3
+// const allPlayers = [...player1, ...player2];
+// console.log(allPlayers);
 
-//4
-const players1Final = ['Thiago', 'Coutinho', 'Perisic', ...player1];
-console.log(players1Final);
+// //4
+// const players1Final = ['Thiago', 'Coutinho', 'Perisic', ...player1];
+// console.log(players1Final);
 
-//5
-const {
-  odds: { team1: team1, x: draw, team2: team2 },
-} = game;
-console.log(team1, draw, team2);
+// //5
+// const {
+//   odds: { team1: team1, x: draw, team2: team2 },
+// } = game;
+// console.log(team1, draw, team2);
 
-//6
-const printGoals = function (players) {
-  console.log(players);
-  console.log(`${players.length} goals were scored`);
-};
-printGoals(...game.scored);
+// //6
+// const printGoals = function (players) {
+//   console.log(players);
+//   console.log(`${players.length} goals were scored`);
+// };
+// printGoals(...game.scored);
 
-//7
-team1 < team2 && console.log('Team 1 is more likely to win');
-team1 > team2 && console.log('Team 2 is more likely to win');
+// //7
+// team1 < team2 && console.log('Team 1 is more likely to win');
+// team1 > team2 && console.log('Team 2 is more likely to win');
