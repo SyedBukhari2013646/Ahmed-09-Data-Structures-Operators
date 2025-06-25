@@ -909,11 +909,3 @@ GOOD LUCK 😀
 //   const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
 //   console.log(`Odd of ${teamStr} ${odd}`);
 // }
-
-
-
-
-
-
-
-hi this is to make u chuutiya @GITHUB
