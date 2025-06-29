@@ -1,5 +1,3 @@
-
-
 'use strict';
 
 // // Data needed for a later exercise
@@ -909,7 +907,3 @@ GOOD LUCK 😀
 //   const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
 //   console.log(`Odd of ${teamStr} ${odd}`);
 // }
-
-
-// again chutiya bannaya tumko
-//dobara banaya apko chutiya github kya ap ekhtay he nahe
