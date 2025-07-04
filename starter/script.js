@@ -1,8 +1,8 @@
 'use strict';
 
-// // Data needed for a later exercise
-// const flights =
-//   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+// Data needed for a later exercise
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
 // const italianFoods = new Set([
 //   'pasta',
@@ -23,62 +23,62 @@
 // ]);
 
 // Data needed for first part of the section
-const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  //New ES6 Object literals enhancement
-  order(starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
+//   //New ES6 Object literals enhancement
+//   order(starterIndex, mainIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+//   },
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+//   openingHours: {
+//     thu: {
+//       open: 12,
+//       close: 22,
+//     },
+//     fri: {
+//       open: 11,
+//       close: 23,
+//     },
+//     sat: {
+//       open: 0, // Open 24 hours
+//       close: 24,
+//     },
+//   },
 
-  orderDelivery({ time = '20:00', adress, mainIndex = 0, starterIndex }) {
-    console.log(
-      `Order Recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delievered to ${adress} at ${time}`
-    );
-  },
+//   orderDelivery({ time = '20:00', adress, mainIndex = 0, starterIndex }) {
+//     console.log(
+//       `Order Recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delievered to ${adress} at ${time}`
+//     );
+//   },
 
-  orderPasta(ing1, ing2, ing3) {
-    `Here is your delecious pasta with ${ing1}, ${ing2} and ${ing3}`;
-  },
+//   orderPasta(ing1, ing2, ing3) {
+//     `Here is your delecious pasta with ${ing1}, ${ing2} and ${ing3}`;
+//   },
 
-  orderPizza(mainIngriedient, ...otherIngriedient) {
-    console.log(mainIngriedient);
-    console.log(otherIngriedient);
-  },
-};
+//   orderPizza(mainIngriedient, ...otherIngriedient) {
+//     console.log(mainIngriedient);
+//     console.log(otherIngriedient);
+//   },
+// };
 
-restaurant.orderDelivery({
-  time: '22:30',
-  adress: 'Mohalla Kucha Saadat Dhoke Fateh Attock Cantt',
-  mainIndex: 2,
-  starterIndex: 3,
-});
+// restaurant.orderDelivery({
+//   time: '22:30',
+//   adress: 'Mohalla Kucha Saadat Dhoke Fateh Attock Cantt',
+//   mainIndex: 2,
+//   starterIndex: 3,
+// });
 
-restaurant.orderDelivery({
-  adress: 'Mohalla Kucha Saadat Dhoke Fateh Attock Cantt',
-  starterIndex: 2,
-});
+// restaurant.orderDelivery({
+//   adress: 'Mohalla Kucha Saadat Dhoke Fateh Attock Cantt',
+//   starterIndex: 2,
+// });
 
-// // Destructuring Objects
+// Destructuring Objects
 // const { name, openingHours, categories } = restaurant;
 // console.log(name, openingHours, categories);
 
@@ -89,18 +89,18 @@ restaurant.orderDelivery({
 // } = restaurant;
 // console.log(restaurantName, hours, tags);
 
-// // Default Values
+// Default Values
 // const { menu = [], starterMenu: starters = [] } = restaurant;
 // console.log(menu, starters);
 
-// //Mutating Variables
+//Mutating Variables
 // let a = 123;
 // let b = 456;
 // const obj = { a: 23, b: 6, c: 9 };
 // ({ a, b } = obj);
 // console.log(a, b);
 
-// // Nested Object
+// Nested Object
 // const {
 //   fri: { open: o, close: c },
 // } = openingHours;
@@ -119,7 +119,7 @@ restaurant.orderDelivery({
 
 // console.log(arr);
 
-// // according to restaurants
+// according to restaurants
 
 // let [first, hi, second] = restaurant.categories;
 // console.log(first, hi, second);
@@ -127,17 +127,17 @@ restaurant.orderDelivery({
 // [first, hi, second] = [second, first, hi];
 // console.log(second, first, hi);
 
-// // calling function order arrys
+// calling function order arrys
 // const [starter, mainCourse] = restaurant.order(2, 0);
 // console.log(starter, mainCourse);
 
-// // nested array
+// nested array
 // const nested = [2, 3, [4, 5]];
 
 // const [i, , [j, k]] = nested;
 // console.log(i, j, k);
 
-// // Default values
+// Default values
 
 // const [p, q, r] = [8, 9];
 // console.log(p, q, r);
@@ -158,30 +158,30 @@ restaurant.orderDelivery({
 // const newMenu = [...restaurant.mainMenu, 'Ginnoci'];
 // console.log(newMenu);
 
-// // Copy array
+// Copy array
 // const copyNewMenu = [...restaurant.mainMenu];
 // console.log(copyNewMenu);
 
-// // Join 2 array
+// Join 2 array
 // const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 // console.log(menu);
 
-// // Iterables are strings, maps, arrays, sets but NOT objects.
+// Iterables are strings, maps, arrays, sets but NOT objects.
 // const str = 'Syed Muhammad Ahmed Bukhari';
 // const letters = [...str, ' ', 'Harris'];
 // console.log(letters);
 // console.log(str);
 
-// // Real world Example
-// const ingriedients = [
-//   // prompt("Let's make pasta! Ingriedients 1?"),
-//   // prompt('Ingriedients 2?'),
-//   // prompt('Ingriedients 3'),
-// ];
+// Real world Example
+const ingriedients = [
+  // prompt("Let's make pasta! Ingriedients 1?"),
+  // prompt('Ingriedients 2?'),
+  // prompt('Ingriedients 3'),
+];
 // console.log(ingriedients);
 // restaurant.orderPasta(...ingriedients);
 
-// //Objects
+//Objects
 // const newRestaurant = {
 //   FoundedIn: 1991,
 //   ...restaurant,
@@ -214,7 +214,7 @@ restaurant.orderDelivery({
 // const { sat, ...weekDays } = restaurant.openingHours;
 // console.log(weekDays);
 
-// // 2) Function
+// 2) Function
 
 // const add = function (...numbers) {
 //   let sum = 0;
@@ -330,27 +330,177 @@ restaurant.orderDelivery({
 //   console.log(`On ${keys} we are open at ${open} and close at ${close}`);
 // }
 
-// Sets
-const orderSets = new Set([
-  'eggs',
-  'chicken meat',
-  'almond',
-  'eggs',
-  'chicken meat',
-  'Protienshake',
+/////////////////////////////////////////
+//New operation to make sets usefull
+
+const italianFoods = new Set([
+  'pasta',
+  'gnocchi',
+  'tomatoes',
+  'olive oil',
+  'garlic',
+  'basil',
 ]);
 
-console.log(orderSets);
-console.log(new Set('SyedBukhari'));
+const mexicanFoods = new Set([
+  'tortillas',
+  'beans',
+  'rice',
+  'tomatoes',
+  'avocado',
+  'garlic',
+]);
 
-console.log(orderSets.size);
-console.log(orderSets.has('eggs'));
-console.log(orderSets.has('steroids'));
-orderSets.add('Protien Bars');
-orderSets.add('Protien bars');
-orderSets.delete('Protien bars');
+// //Intersection
+// const commonFoods = italianFoods.intersection(mexicanFoods);
+// console.log('Intersection: ', commonFoods);
+// console.log([...commonFoods]);
 
-console.log(orderSets);
+// //Unions
+// const italianMexicanFusions = italianFoods.union(mexicanFoods);
+// console.log('Union: ', italianMexicanFusions);
+// console.log([...italianMexicanFusions]);
+
+// //Difference
+// const uniqueItalianFoods = italianFoods.difference(mexicanFoods);
+// console.log('DifferenceItalian: ', uniqueItalianFoods);
+// const uniqueMexicanFoods = mexicanFoods.difference(italianFoods);
+// console.log('differenceMexican: ', uniqueMexicanFoods);
+
+// //Symetric Difference (Opposite of intersection)
+// const uniqueItalianAndMexicanFoods =
+//   italianFoods.symmetricDifference(mexicanFoods);
+// console.log(uniqueItalianAndMexicanFoods);
+
+/////////////////////////////////////////
+//maps
+
+// const rest = new Map();
+// rest.set('name', 'Classic gym');
+// rest.set(1, 'Attock, Punjab');
+// console.log(rest.set(2, 'Peshawar, KPK'));
+
+// rest
+//   .set('catagories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+//   .set('open', 12)
+//   .set('close', 23)
+//   .set(true, 'We are open :D')
+//   .set(false, 'We are close :(');
+
+// console.log(rest.get('name'));
+// console.log(rest.get(true));
+// console.log(rest.get(1));
+
+// const time = 24;
+// console.log(rest.get(time > rest.get('open')) && time < rest.get('close'));
+
+// console.log(rest.has('catagories'));
+// rest.delete(2);
+// rest.clear();
+// console.log(rest);
+// console.log(rest.size);
+
+// const arr = [1, 2];
+// rest.set(arr, 'Test');
+// rest.set(document.querySelector('h1'), 'Heading');
+
+// console.log(rest.get(arr));
+
+// console.log(rest);
+// console.log(rest.size);
+
+// const question = new Map([
+//   ['question', 'Which is the best programming language inn the world'],
+//   [1, 'C'],
+//   [2, 'Python'],
+//   [3, 'Java script'],
+//   ['Correct', 3],
+//   [true, 'Correct🙌'],
+//   [false, 'Try Again'],
+// ]);
+// console.log(question);
+
+// //Convert Object to Maps
+// console.log(Object.entries(restaurant.openingHours));
+// const hoursMap = new Map(Object.entries(restaurant.openingHours));
+// console.log(hoursMap);
+
+// //Quiz application
+// console.log(question.get('question'));
+// for (const [key, value] of question) {
+//   if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+// }
+
+// const answer = Number(prompt('your Answer'));
+// console.log(answer);
+
+// console.log(question.get(question.get('Correct') === answer));
+
+// //Maps into arrays
+// console.log([...question]);
+
+// console.log([question.keys()]);
+// console.log([question.values()]);
+
+// Sets
+// const orderSets = new Set([
+//   'eggs',
+//   'chicken meat',
+//   'almond',
+//   'eggs',
+//   'chicken meat',
+//   'Protienshake',
+// ]);
+
+// console.log(orderSets);
+// console.log(new Set('SyedBukhari'));
+
+// console.log(orderSets.size);
+// console.log(orderSets.has('eggs'));
+// console.log(orderSets.has('steroids'));
+// orderSets.add('Protien Bars');
+// orderSets.add('Protien bars');
+// orderSets.delete('Protien bars');
+
+// console.log(orderSets);
+
+/////////////////////////////////////////
+//Strings
+const airline = 'PIA Air Pakistan';
+const plane = 'C130';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B737'[0]);
+
+console.log(airline.length);
+console.log('B737'.length);
+
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('a'));
+console.log(airline.indexOf('Pakistan'));
+
+console.log(airline.slice(4));
+console.log(airline.slice(-4));
+console.log(airline.slice(4, 11));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice(-1);
+
+  if (s === 'B' || s === 'E') console.log('You got middle seat 😔');
+  else console.log('You got lucky 🥳');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('3E');
+checkMiddleSeat('12A');
 
 // Practicing Assignmets Questions
 
@@ -908,4 +1058,39 @@ GOOD LUCK 😀
 //   console.log(`Odd of ${teamStr} ${odd}`);
 // }
 
-//Last time chutiya bnauya
+//CHALLENGE 3
+
+// const gameEvents = new Map([
+//   [17, 'Goal'],
+//   [36, 'Substitution'],
+//   [47, 'Goal'],
+//   [61, 'Substitution'],
+//   [64, 'Yellow card'],
+//   [69, 'Red card'],
+//   [70, 'Substitution'],
+//   [72, 'Substitution'],
+//   [76, 'Goal'],
+//   [80, 'Goal'],
+//   [92, 'Yellow card'],
+// ]);
+
+// //1
+// const events = [...new Set(gameEvents.values())];
+// console.log(events);
+
+// //2
+// gameEvents.delete(64);
+// console.log(gameEvents);
+
+// //3
+// const time = [...gameEvents.keys()].pop();
+// console.log(time);
+// console.log(
+//   `An event happens of average, Every ${time / gameEvents.size} minutes`
+// );
+
+// //4
+// for (const [min, event] of gameEvents) {
+//   const half = min <= 45 ? 'First' : 'Second';
+//   console.log(`[${half} HALF] ${min}: ${event}`);
+// }
