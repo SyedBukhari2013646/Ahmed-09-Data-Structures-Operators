@@ -466,44 +466,162 @@ const mexicanFoods = new Set([
 
 /////////////////////////////////////////
 //Strings
-const airline = 'PIA Air Pakistan';
-const plane = 'C130';
+// const airline = 'PIA Air Pakistan';
+// const plane = 'C130';
 
-console.log(plane[0]);
-console.log(plane[1]);
-console.log(plane[2]);
-console.log('B737'[0]);
+// console.log(plane[0]);
+// console.log(plane[1]);
+// console.log(plane[2]);
+// console.log('B737'[0]);
 
-console.log(airline.length);
-console.log('B737'.length);
+// console.log(airline.length);
+// console.log('B737'.length);
 
-console.log(airline.indexOf('r'));
-console.log(airline.lastIndexOf('a'));
-console.log(airline.indexOf('Pakistan'));
+// console.log(airline.indexOf('r'));
+// console.log(airline.lastIndexOf('a'));
+// console.log(airline.indexOf('Pakistan'));
 
-console.log(airline.slice(4));
-console.log(airline.slice(-4));
-console.log(airline.slice(4, 11));
+// console.log(airline.slice(4));
+// console.log(airline.slice(-4));
+// console.log(airline.slice(4, 11));
 
-console.log(airline.slice(0, airline.indexOf(' ')));
-console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+// console.log(airline.slice(0, airline.indexOf(' ')));
+// console.log(airline.slice(airline.lastIndexOf(' ') + 1));
 
-console.log(airline.slice(-2));
-console.log(airline.slice(1, -1));
+// console.log(airline.slice(-2));
+// console.log(airline.slice(1, -1));
 
-const checkMiddleSeat = function (seat) {
-  const s = seat.slice(-1);
+// const checkMiddleSeat = function (seat) {
+//   const s = seat.slice(-1);
 
-  if (s === 'B' || s === 'E') console.log('You got middle seat 😔');
-  else console.log('You got lucky 🥳');
-};
+//   if (s === 'B' || s === 'E') console.log('You got middle seat 😔');
+//   else console.log('You got lucky 🥳');
+// };
 
-checkMiddleSeat('11B');
-checkMiddleSeat('3E');
-checkMiddleSeat('12A');
+// checkMiddleSeat('11B');
+// checkMiddleSeat('3E');
+// checkMiddleSeat('12A');
+
+// //To Lower and upper case
+// const passenger = 'Harris';
+// console.log(passenger.toLowerCase());
+// console.log(passenger.toUpperCase());
+
+// //Fixed Capitilization in Strings
+// const passenger1 = 'mUhamMad';
+// const passenger1Lower = passenger1.toLowerCase();
+// const passenger1Correct =
+//   passenger1Lower[0].toUpperCase() + passenger1Lower.slice(1);
+// console.log(passenger1Correct);
+
+// //Compairing EMAILS
+// const email = 'Ahmed@123.gmail.com';
+// const loginEmail = '  ahMed@123.gMail.Com   \n';
+
+// const normalizeEmail = loginEmail.toLowerCase().trim();
+// const normalizeEmailFinal =
+//   normalizeEmail[0].toUpperCase() + normalizeEmail.slice(1);
+// console.log(normalizeEmailFinal);
+
+// //Replacing
+// const priceGB = '234,198£';
+// const priceUS = priceGB.replace(',', '.').replace('£', '$');
+// console.log(priceUS);
+
+// const announcement = 'All passengers go to boarding door 4.Boardinng door 4!';
+// console.log(announcement.replaceAll('door', 'gate'));
+
+// //Boolean
+// const planes = 'Airbus C130neo';
+// console.log(planes.includes(3));
+// console.log(planes.includes('ai'));
+// console.log(planes.startsWith('Air'));
+// console.log(planes.endsWith('neo'));
+
+// //Practicing Assignment
+// const checkBaggage = function (items) {
+//   const Baggage = items.toLowerCase();
+
+//   if (Baggage.includes('knife') || Baggage.includes('gun')) {
+//     console.log('You are not allowed sir/mam! Kindly leave the stuff behind');
+//   } else {
+//     console.log('Welcome aboard sir! Have a safe journey☺️');
+//   }
+// };
+
+// checkBaggage('I m havinng some fruitS and a Knife to cut them');
+// checkBaggage('I have a camera and a tripod, and a cat');
+
+// checkBaggage('I have a gun for security kun k bohot paisa hai meray pass😂');
+
+// if (planes.startsWith('Air') && planes.endsWith('neo')) {
+//   console.log('The plane in the part of Pakistan New Plane Family');
+// }
+
+//////////////////////////////////
+//String Part 3
+
+// console.log('A+very+nice+string'.split('+'));
+// console.log('Syed Muhammad Ahmed Bukhari'.split(' '));
+
+// const [firstName, mid0, mid1, lastName] = 'Syed Muhammad Ahmed Bukhari'.split(
+//   ' '
+// );
+// console.log(firstName);
+// console.log(lastName);
+// console.log(mid0);
+// console.log(mid1);
+
+// const newName = ['Mr.', firstName, mid0, mid1, lastName].join(' ');
+// console.log(newName);
+
+// //Capitilization of the string
+// const capitilizeName = function (name) {
+//   const names = name.split(' ');
+//   const namesUpper = [];
+
+//   for (const n of names) {
+//     // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+
+//     namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+//   }
+
+//   console.log(namesUpper.join(' '));
+// };
+
+// capitilizeName('syed muhammad ahmed bukhari');
+// capitilizeName('momina qasim');
+// capitilizeName('raran ibra');
+
+// //Padding
+// const names = 'Syed muhammad ahmed bukhari';
+// console.log(names.padStart(35, '$').padEnd(43, '$'));
+
+// //Padding Real life bank credit card no
+
+// const maskCreditCard = function (number) {
+//   const str = number + '';
+//   const last = str.slice(-4);
+//   return last.padStart(str.length, '*');
+// };
+
+// console.log(maskCreditCard(45346457674534));
+// console.log(maskCreditCard(4534645762354576878));
+// console.log(maskCreditCard(4534645760780878));
+
+// // Repeat methods
+// const message2 = 'Bad Weather... All departure delayed... ';
+// console.log(message2.repeat(5));
+
+// const planesInLines = function (n) {
+//   console.log(`There are ${n} of planes in line ${'🛩️'.repeat(n)}`);
+// };
+
+// planesInLines(5);
+// planesInLines(15);
+// planesInLines(6);
 
 // Practicing Assignmets Questions
-
 const books = [
   {
     title: 'Algorithms',
@@ -1094,3 +1212,40 @@ GOOD LUCK 😀
 //   const half = min <= 45 ? 'First' : 'Second';
 //   console.log(`[${half} HALF] ${min}: ${event}`);
 // }
+
+/////////////////////////////////////
+///////////Challenge 4///////////////
+/////////////////////////////////////
+
+// Write a program that receives a list of variable names written in underscore_case
+// and convert them to camelCase.
+// The input will come from a textarea inserted into the DOM (see code below to
+// insert the elements), and conversion will happen when the button is pressed.
+// Test data (pasted to textarea, including spaces):
+// underscore_case
+// first_name
+// Some_Variable
+//  calculate_AGE
+// delayed_departure
+// Should produce this output (5 separate console.log outputs):
+// underscoreCase   ✅
+// firstName        ✅✅
+// someVariable     ✅✅✅
+// calculateAge     ✅✅✅✅
+// delayedDeparture ✅✅✅✅✅
+// Hints:
+// § Remember which character defines a new line in the textarea �
+// § The solution only needs to work for a variable made out of 2 words, like a_b
+// § Start without worrying about the ✅. Tackle that only after you have the variable
+// name conversion working �
+// § This challenge is difficult on purpose, so start watching the solution in case
+// you're stuck. Then pause and continue!
+// Afterwards, test with your own test data!
+// GOOD LUCK
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+const text = document.querySelector('textarea').value;
+
+//Solution
